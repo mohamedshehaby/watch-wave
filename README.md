@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Watch Wave
 
-## Getting Started
+Watch Wave is a web application built using Next.js and the TMDB API, allowing users to explore information about movies, TV shows, and actors. Users can create an account using email, GitHub, or Google authentication and save their favorite items to a personalized list.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Motivation](#motivation)
+- [Features](#features)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Motivation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The idea behind Watch Wave stemmed from the desire to create a user-friendly platform where movie and TV show enthusiasts can easily access information about their favorite entertainment content. With the proliferation of streaming services and the vast amount of content available, it can be overwhelming for users to keep track of what they want to watch. Watch Wave aims to simplify this process by providing a centralized hub where users can discover, save, and organize their preferred movies, TV shows, and actors.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+- **User Authentication:** Users can sign up and log in using email, GitHub, or Google accounts.
+- **Browse Content:** Explore a vast library of movies, TV shows, and actor information fetched from the TMDB API.
+- **Favorite List:** Users can add items to their favorite list for easy access later.
+- **Search Functionality:** Search for specific movies, TV shows, or actors.
+- **Responsive Design:** The application is responsive and works seamlessly across different devices.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project locally, follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Clone the repository:
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/yourusername/watch-wave.git
+2. Navigate to the project directory:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+    cd watch-wave
+   ``` 
+3. Install the dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm install
+   ```
+4. This project using the following environment variables:
+    1. Prisma, mongodb to handel authentication, authorization with JWT, Google and Github OAuth and add favorite list.
+   2. Next Auth to handle Google and Github OAuth.
+   3. TMDB API to fetch movies, tv shows and actors data.
+   4. TMBD_BASE_URL and TMBD_IMAGE_BASE_URL to fetch images and other data from TMDB API.
+
+
+
+   ```bash
+   DATABASE_URL=
+  NEXTAUTH_JWT_SECRET=
+  NEXTAUTH_SECRET=
+  GITHUB_ID=
+  GITHUB_SECRET=
+  GOOGLE_CLIENT_ID=
+  GOOGLE_CLIENT_SECRET=
+  TMDB_API_KEY=
+  TMBD_BASE_URL=
+  TMBD_IMAGE_BASE_URL=
+   ```
+
+5. Run the development server:
+
+   ```bash
+    npm run dev
+    ```
+6. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+7. To build the application for production, run:
+
+   ```bash
+   npm run build
+   npm run start
+   ```
+
+## Usage
+- Upon accessing the application, users can sign up or log in using their preferred method.
+- Once logged in, users can browse through movies, TV shows, and actors using the navigation menu.
+- Users can search for specific items using the search functionality.
+- To add an item to their favorites list, users can click on the "Add to Favorites" button.
+- Users can view their favorite list by navigating to the Favorites section in the navigation menu.
+
+## Technologies Used
+- Next.js
+- React
+- TMDB API
+- Tailwind CSS
+- Next Auth
+- Prisma
+- MongoDB
+- Google OAuth
+- GitHub OAuth
+
+
+## Contributing
+
+Contributions are welcome! To contribute to the project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature/improvement).
+3. Make your changes.
+4. Commit your changes (git commit -m 'Add some feature').
+5. Push to the branch (git push origin feature/improvement).
+6. Create a new Pull Request.

@@ -57,7 +57,7 @@
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\MoShehaby\\AppData\\Roaming\\npm\\node_modules\\prettier",
     "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "I:\\Web\\next_js\\watch-wave\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\MoShehaby\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -116,7 +116,7 @@
       <workItem from="1707768014405" duration="7005000" />
       <workItem from="1707835687718" duration="36000" />
       <workItem from="1708192894595" duration="16853000" />
-      <workItem from="1708364113945" duration="633000" />
+      <workItem from="1708364113945" duration="1837000" />
     </task>
     <servers />
   </component>

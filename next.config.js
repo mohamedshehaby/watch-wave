@@ -1,4 +1,22 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    unoptimized: true,
+    // remotePatterns: [
+    //   {
+    //     protocol: "https",
+    //     hostname: "image.tmdb.org",
+    //     port: "",
+    //     pathname: "/t/p/**",
+    //   },
+    // ],
+  },
 
-module.exports = nextConfig
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
+};
+
+module.exports = nextConfig;
