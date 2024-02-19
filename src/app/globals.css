@@ -2,45 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
 
-html {
-    @apply h-full;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
 }
 
 body {
-    @apply bg-zinc-900  overflow-x-hidden;
-}
-
-#__next {
-    @apply h-full;
-}
-
-.swiper {
-    width: 100dvw;
-    height: 80dvh;
-}
-
-.swiper-slide {
-    background-position: center;
-    background-size: cover;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-}
-
-.swiper-pagination-bullet {
-    background: #fff !important;
-    opacity: 0.5 !important;
-    width: 16px !important;
-    height: 4px !important;
-    border-radius: 4px !important;
-}
-
-.swiper-pagination-bullet-active {
-    background: rgb(230, 10, 21) !important;
-}
-.blur-img {
-    mask-image: linear-gradient(to bottom,transparent,rgba(0,0,0,.068) 3.3%,rgba(0,0,0,.145) 5.9%,rgba(0,0,0,.227) 8.1%,rgba(0,0,0,.313) 10.1%,rgba(0,0,0,.401) 12.1%,rgba(0,0,0,.49) 14.6%,rgba(0,0,0,.578) 17.7%,rgba(0,0,0,.661) 21.8%,rgba(0,0,0,.74) 27.1%,rgba(0,0,0,.812) 33.9%,rgba(0,0,0,.875) 42.4%,rgba(0,0,0,.927) 53%,rgba(0,0,0,.966) 66%,rgba(0,0,0,.991) 81.5%,rgba(0,0,0,.991) 100%);
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }

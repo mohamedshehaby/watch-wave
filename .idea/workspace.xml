@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2bf8ab7b-658c-4cfe-ae97-45a9ef9ea237" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2b5rMw5Cwc2wnV1S60gYd3YEy0L" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "main",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "G:/web/Udemy - The Complete JavaScript Course 2023 From Zero to Expert/Files/complete-javascript-course-master/13-Advanced-DOM-Bankist/starter",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "I:\\Web\\next_js\\watch-wave\\node_modules\\eslint",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\MoShehaby\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "I:\\Web\\next_js\\watch-wave\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\Web\next_js\watch-wave\public" />
+      <recent name="I:\Web\next_js\watch-wave\src\providers" />
+      <recent name="I:\Web\next_js\watch-wave\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\Web\next_js\watch-wave\src\app\movies\[ListType]" />
+      <recent name="I:\Web\next_js\watch-wave\public\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2bf8ab7b-658c-4cfe-ae97-45a9ef9ea237" name="Changes" comment="" />
+      <created>1705515736467</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705515736467</updated>
+      <workItem from="1705515738316" duration="5085000" />
+      <workItem from="1705577548594" duration="61000" />
+      <workItem from="1705578803213" duration="264000" />
+      <workItem from="1705683589509" duration="15000" />
+      <workItem from="1706610800980" duration="8173000" />
+      <workItem from="1706814685088" duration="255000" />
+      <workItem from="1706815350592" duration="6900000" />
+      <workItem from="1706864831449" duration="4209000" />
+      <workItem from="1706878122527" duration="14854000" />
+      <workItem from="1706897899568" duration="9885000" />
+      <workItem from="1706955386358" duration="2242000" />
+      <workItem from="1706975533794" duration="616000" />
+      <workItem from="1707299541865" duration="4041000" />
+      <workItem from="1707311144546" duration="5895000" />
+      <workItem from="1707321271564" duration="14680000" />
+      <workItem from="1707760926699" duration="66000" />
+      <workItem from="1707768014405" duration="7005000" />
+      <workItem from="1707835687718" duration="36000" />
+      <workItem from="1708192894595" duration="16853000" />
+      <workItem from="1708364113945" duration="633000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
