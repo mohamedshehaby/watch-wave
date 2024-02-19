@@ -2,16 +2,16 @@
 
 Watch Wave is a web application built using Next.js and the TMDB API, allowing users to explore information about movies, TV shows, and actors. Users can create an account using email, GitHub, or Google authentication and save their favorite items to a personalized list.
 
+Live Demo: [Watch Wave](https://watch-wave-beta.vercel.app/)
+
 ## Table of Contents
 
 - [Motivation](#motivation)
 - [Features](#features)
 - [Installation](#installation)
-- [Environment Variables](#environment-variables)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Motivation
 
