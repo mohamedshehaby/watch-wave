@@ -3,10 +3,9 @@ import { Button, Input } from "@nextui-org/react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { signIn, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { paths } from "@/app/paths";
 import { useRouter } from "next/navigation";
-import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import { useMutation } from "@tanstack/react-query";
 
@@ -106,30 +105,30 @@ function LoginForm() {
           Sign in with Github
         </Button>
 
-        <Button
-          onClick={() => {
-            void signIn("google", {
-              callbackUrl: paths.home(),
-            });
-          }}
-          fullWidth
-          startContent={<FcGoogle size={24} />}
-          variant={"flat"}
-        >
-          Sign in with Google
-        </Button>
+        {/*<Button*/}
+        {/*  onClick={() => {*/}
+        {/*    void signIn("google", {*/}
+        {/*      callbackUrl: paths.home(),*/}
+        {/*    });*/}
+        {/*  }}*/}
+        {/*  fullWidth*/}
+        {/*  startContent={<FcGoogle size={24} />}*/}
+        {/*  variant={"flat"}*/}
+        {/*>*/}
+        {/*  Sign in with Google*/}
+        {/*</Button>*/}
 
-        <Button
-          onClick={() => {
-            void signOut({
-              callbackUrl: paths.home(),
-            });
-          }}
-          fullWidth
-          variant={"flat"}
-        >
-          Sign out
-        </Button>
+        {/*<Button*/}
+        {/*  onClick={() => {*/}
+        {/*    void signOut({*/}
+        {/*      callbackUrl: paths.home(),*/}
+        {/*    });*/}
+        {/*  }}*/}
+        {/*  fullWidth*/}
+        {/*  variant={"flat"}*/}
+        {/*>*/}
+        {/*  Sign out*/}
+        {/*</Button>*/}
       </div>
     </>
   );

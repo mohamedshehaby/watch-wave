@@ -1,7 +1,19 @@
 "use client";
 import React from "react";
 import {
-  Avatar,
+  Activity,
+  ChevronDown,
+  Flash,
+  Lock,
+  Scale,
+  SearchIcon,
+  Server,
+  TagUser,
+} from "@nextui-org/shared-icons";
+
+import {
+  Badge,
+  Button,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -13,21 +25,26 @@ import {
   NavbarContent,
   NavbarItem,
   NavbarMenu,
-  NavbarMenuItem,
   NavbarMenuToggle,
 } from "@nextui-org/react";
-import { SearchIcon } from "@nextui-org/shared-icons";
-import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { paths } from "@/app/paths";
 import { usePathname } from "next/navigation";
-
-// import Link from "next/link";
+import NavbarAuthAvatar from "@/components/NavbarAuthAvatar";
 
 function Navbar() {
-  const { user } = useCurrentUser();
-  const pathName = usePathname();
+  const icons = {
+    chevron: <ChevronDown fill="currentColor" size={16} />,
+    scale: <Scale className="text-warning" fill="currentColor" size={30} />,
+    lock: <Lock className="text-success" fill="currentColor" size={30} />,
+    activity: (
+      <Activity className="text-secondary" fill="currentColor" size={30} />
+    ),
+    flash: <Flash className="text-primary" fill="currentColor" size={30} />,
+    server: <Server className="text-success" fill="currentColor" size={30} />,
+    user: <TagUser className="text-danger" fill="currentColor" size={30} />,
+  };
 
-  console.log(pathName);
+  const pathName = usePathname();
 
   const menuItems = ["now_playing", "popular", "top_rated", "upcoming"];
 
@@ -38,23 +55,64 @@ function Navbar() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
-        <NavbarBrand>
+        <NavbarBrand className="flex-grow-0 flex-shrink-1">
           <Link color="foreground" href={paths.home()}>
             <p className="font-bold text-inherit">Watch Wave</p>
           </Link>
         </NavbarBrand>
 
-        {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`}>
-            <Link
-              color={pathName === paths.movies(item) ? "warning" : "foreground"}
-              href={paths.movies(item)}
-            >
-              {item.split("_").join(" ").charAt(0).toUpperCase()}
-              {item.split("_").join(" ").slice(1)}
-            </Link>
+        <Dropdown backdrop="blur">
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                endContent={icons.chevron}
+                radius="sm"
+                variant="light"
+              >
+                Movies
+              </Button>
+            </DropdownTrigger>
           </NavbarItem>
-        ))}
+
+          <DropdownMenu
+            aria-label="Movies"
+            itemClasses={{
+              base: "gap-4",
+            }}
+          >
+            {menuItems.map((item, index) => (
+              <DropdownItem key={`${item}-${index}`}>
+                <Link
+                  color={
+                    pathName === paths.movies(item) ? "warning" : "foreground"
+                  }
+                  href={paths.movies(item)}
+                  size="lg"
+                >
+                  {item.split("_").join(" ").charAt(0).toUpperCase()}
+                  {item.split("_").join(" ").slice(1)}
+                </Link>
+              </DropdownItem>
+            ))}
+          </DropdownMenu>
+        </Dropdown>
+
+        <NavbarItem>
+          <Badge content="soon" color="danger" size="sm">
+            <Link isDisabled color="foreground" href="#">
+              TV Shows
+            </Link>
+          </Badge>
+        </NavbarItem>
+        <NavbarItem>
+          <Badge content="soon" color="danger" size="sm">
+            <Link isDisabled color="foreground" href="#">
+              Torrent Search
+            </Link>
+          </Badge>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarContent as="div" className="items-center flex-1" justify="end">
@@ -71,55 +129,76 @@ function Navbar() {
           startContent={<SearchIcon />}
           type="search"
         />
-        <Dropdown placement="bottom-end">
-          <DropdownTrigger>
-            <Avatar
-              isBordered
-              as="button"
-              className="transition-transform"
-              color="primary"
-              name={user?.name || "User"}
-              size="sm"
-              src={
-                user?.image
-                  ? user?.image
-                  : `https://i.pravatar.cc/150?u=a042581f4e29026704d`
-              }
-            />
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
-              <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">{user?.email}</p>
-            </DropdownItem>
 
-            <DropdownItem key="logout" color="danger">
-              Log Out
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+        <NavbarAuthAvatar />
       </NavbarContent>
 
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full flex-grow-0"
-              color={
-                index === 2
-                  ? "warning"
-                  : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-              }
-              href={paths.movies(item)}
-              size="lg"
-            >
-              {item.split("_").join(" ").charAt(0).toUpperCase()}
-              {item.split("_").join(" ").slice(1)}
+        <Dropdown backdrop="blur">
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                disableRipple
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                endContent={icons.chevron}
+                radius="sm"
+                variant="light"
+              >
+                Movies
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+
+          <DropdownMenu
+            aria-label="Movies"
+            itemClasses={{
+              base: "gap-4",
+            }}
+          >
+            {menuItems.map((item, index) => (
+              <DropdownItem key={`${item}-${index}`}>
+                <Link
+                  color={
+                    pathName === paths.movies(item) ? "warning" : "foreground"
+                  }
+                  href={paths.movies(item)}
+                  size="lg"
+                >
+                  {item.split("_").join(" ").charAt(0).toUpperCase()}
+                  {item.split("_").join(" ").slice(1)}
+                </Link>
+              </DropdownItem>
+            ))}
+          </DropdownMenu>
+        </Dropdown>
+
+        <NavbarItem>
+          <Badge content="soon" color="danger" size="sm">
+            <Link isDisabled color="foreground" href="#">
+              TV Shows
             </Link>
-          </NavbarMenuItem>
-        ))}
+          </Badge>
+        </NavbarItem>
+        <NavbarItem>
+          <Badge content="soon" color="danger" size="sm">
+            <Link isDisabled color="foreground" href="#">
+              Torrent Search
+            </Link>
+          </Badge>
+        </NavbarItem>
+        {/*{menuItems.map((item, index) => (*/}
+        {/*  <NavbarMenuItem key={`${item}-${index}`}>*/}
+        {/*    <Link*/}
+        {/*      className="w-full flex-grow-0"*/}
+        {/*      color={pathName === paths.movies(item) ? "warning" : "foreground"}*/}
+        {/*      href={paths.movies(item)}*/}
+        {/*      size="lg"*/}
+        {/*    >*/}
+        {/*      {item.split("_").join(" ").charAt(0).toUpperCase()}*/}
+        {/*      {item.split("_").join(" ").slice(1)}*/}
+        {/*    </Link>*/}
+        {/*  </NavbarMenuItem>*/}
+        {/*))}*/}
       </NavbarMenu>
     </NextUiNavBar>
   );

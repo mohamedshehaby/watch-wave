@@ -30,6 +30,26 @@ body {
     width: 100%;
 }
 
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 70vw !important;
+    height: 100%;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+
+
 .swiper-pagination-bullet {
     background: #fff !important;
     opacity: 0.5 !important;
@@ -41,6 +61,8 @@ body {
 .swiper-pagination-bullet-active {
     background: rgb(230, 10, 21) !important;
 }
+
+
 .blur-img {
     mask-image: linear-gradient(to bottom,transparent,rgba(0,0,0,.068) 3.3%,rgba(0,0,0,.145) 5.9%,rgba(0,0,0,.227) 8.1%,rgba(0,0,0,.313) 10.1%,rgba(0,0,0,.401) 12.1%,rgba(0,0,0,.49) 14.6%,rgba(0,0,0,.578) 17.7%,rgba(0,0,0,.661) 21.8%,rgba(0,0,0,.74) 27.1%,rgba(0,0,0,.812) 33.9%,rgba(0,0,0,.875) 42.4%,rgba(0,0,0,.927) 53%,rgba(0,0,0,.966) 66%,rgba(0,0,0,.991) 81.5%,rgba(0,0,0,.991) 100%);
 }

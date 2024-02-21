@@ -13,7 +13,8 @@ import "swiper/css/pagination";
 // import required modules
 import Slide from "@/components/Slide";
 import { MoviesList } from "@/lib/types";
-import { Navigation } from "swiper/modules";
+
+import { EffectCoverflow } from "swiper/modules";
 
 interface CarouselProps {
   moviesList: MoviesList;
@@ -23,9 +24,19 @@ function Carousel({ moviesList }: CarouselProps) {
   const { movies, totalPages } = moviesList;
   return (
     <Swiper
-      spaceBetween={30}
-      effect={"fade"}
-      modules={[Navigation]}
+      effect={"coverflow"}
+      grabCursor={true}
+      centeredSlides={true}
+      slidesPerView={"auto"}
+      coverflowEffect={{
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      }}
+      pagination={true}
+      modules={[EffectCoverflow]}
       className="mySwiper"
     >
       {movies.map((movie, index) => (
