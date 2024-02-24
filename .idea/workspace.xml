@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf8ab7b-658c-4cfe-ae97-45a9ef9ea237" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/series/[ListType]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NavbarDropdown.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Swiper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/queries/apiEndPoints.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/queries/apiSeries.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/movies/[ListType]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/movies/[ListType]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/paths.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Carousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Slide.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slide.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/movies/MovieCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/movies/MediaCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/movies/MovieList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/movies/MediaUiList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/queries/apiMovies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/queries/apiMovies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Swiper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Swiper.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +147,7 @@
       <workItem from="1708364113945" duration="5250000" />
       <workItem from="1708436432481" duration="1680000" />
       <workItem from="1708540762156" duration="5353000" />
-      <workItem from="1708788088112" duration="7607000" />
+      <workItem from="1708788088112" duration="8630000" />
     </task>
     <servers />
   </component>
