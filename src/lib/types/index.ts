@@ -19,7 +19,7 @@
 //     "vote_count": 711
 // },
 
-export interface Movie {
+export interface Media {
   backdropPath: string;
   id: number;
   originalTitle: string;
@@ -32,8 +32,8 @@ export interface Movie {
   genres: string[];
 }
 
-export interface MoviesList {
-  movies: Movie[];
+export interface MediaList {
+  medias: Media[];
   totalPages: number;
 }
 

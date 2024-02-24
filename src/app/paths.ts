@@ -3,4 +3,5 @@ export const paths = {
   auth: () => "/auth",
   profiles: () => "/profiles",
   movies: (listType: string) => `/movies/${listType}`,
+  series: (listType: string) => `/series/${listType}`,
 };

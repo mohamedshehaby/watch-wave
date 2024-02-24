@@ -1,32 +1,31 @@
 import React from "react";
-import { MoviesList } from "@/lib/types";
-import MovieCard from "@/features/movies/MovieCard";
+import { MediaList } from "@/lib/types";
+import MediaCard from "@/features/movies/MediaCard";
 import Link from "@/components/Link";
 import Pagination from "@/components/Pagination";
 
-interface MovieListProps {
+interface MediasUiListProps {
   title: string;
   href?: string;
-  fetchMovies: () => Promise<MoviesList>;
+  fetchMedias: () => Promise<MediaList>;
   displayCount?: number;
   showPagination?: boolean;
   showTitle?: boolean;
 }
 
-async function MovieList({
+async function MediasUiList({
   title,
   href,
-  fetchMovies,
+  fetchMedias,
   displayCount = 4,
   showPagination = false,
-  showTitle = true,
-}: MovieListProps) {
-  const { movies, totalPages }: MoviesList = await fetchMovies();
+}: MediasUiListProps) {
+  const { medias, totalPages }: MediaList = await fetchMedias();
 
   return (
     <div className="text-white flex gap-4 flex-col text-md md:text-xl lg:text-2xl font-semibold">
       <div className="flex justify-between items-center">
-        {showTitle && <h2>{title}</h2>}
+        <h2>{title}</h2>
 
         {href && (
           <Link href={href} underline={"hover"}>
@@ -36,8 +35,8 @@ async function MovieList({
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-x-4 gap-y-4 ">
-        {movies.slice(0, displayCount).map((movie, index) => (
-          <MovieCard movie={movie} key={`${movie.title}-${index}`} />
+        {medias.slice(0, displayCount).map((media, index) => (
+          <MediaCard media={media} key={`${media.title}-${index}`} />
         ))}
       </div>
 
@@ -46,4 +45,4 @@ async function MovieList({
   );
 }
 
-export default MovieList;
+export default MediasUiList;

@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf8ab7b-658c-4cfe-ae97-45a9ef9ea237" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/series/[ListType]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NavbarDropdown.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Swiper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/queries/apiEndPoints.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/queries/apiSeries.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Carousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/movies/[ListType]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/movies/[ListType]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/paths.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slider.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Slide.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slide.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/movies/MovieCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/movies/MediaCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/movies/MovieList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/movies/MediaUiList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/queries/apiMovies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/queries/apiMovies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/types/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,33 +55,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/web/Udemy - The Complete JavaScript Course 2023 From Zero to Expert/Files/complete-javascript-course-master/13-Advanced-DOM-Bankist/starter&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;I:\\Web\\next_js\\watch-wave\\node_modules\\eslint&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\MoShehaby\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;I:\\Web\\next_js\\watch-wave\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "main",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "I:/Web/next_js/watch-wave/src/app/series",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "I:\\Web\\next_js\\watch-wave\\node_modules\\eslint",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.start.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\MoShehaby\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "I:\\Web\\next_js\\watch-wave\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\Web\next_js\watch-wave\src\app\series" />
       <recent name="I:\Web\next_js\watch-wave\public" />
       <recent name="I:\Web\next_js\watch-wave\src\providers" />
       <recent name="I:\Web\next_js\watch-wave\public\images" />
@@ -147,7 +161,7 @@
       <workItem from="1708364113945" duration="5250000" />
       <workItem from="1708436432481" duration="1680000" />
       <workItem from="1708540762156" duration="5353000" />
-      <workItem from="1708788088112" duration="967000" />
+      <workItem from="1708788088112" duration="7607000" />
     </task>
     <servers />
   </component>

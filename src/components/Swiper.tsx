@@ -1,31 +1,21 @@
 "use client";
-
 import React from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+import { Swiper as ReactSwiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// import required modules
-import Slide from "@/components/Slide";
-import { MoviesList } from "@/lib/types";
-
 import { EffectCoverflow } from "swiper/modules";
+import { Media } from "@/lib/types";
+import Slide from "@/components/Slide";
 
-interface CarouselProps {
-  moviesList: MoviesList;
-}
-
-function Carousel({ moviesList }: CarouselProps) {
-  const { movies, totalPages } = moviesList;
-
+function Swiper({ medias }: { medias: Media[] }) {
   return (
-    <Swiper
-      wrapperClass={" mt-2  lg:mt-8 "}
+    <ReactSwiper
+      wrapperClass={" mt-2 lg:mt-8 "}
       effect={"coverflow"}
       grabCursor={true}
       centeredSlides={true}
@@ -41,13 +31,13 @@ function Carousel({ moviesList }: CarouselProps) {
       modules={[EffectCoverflow]}
       className="mySwiper"
     >
-      {movies.map((movie, index) => (
-        <SwiperSlide key={`${movie.title}-${index}`}>
-          <Slide movie={movie} />
+      {medias.map((media, index) => (
+        <SwiperSlide key={`${media.title}-${index}`}>
+          <Slide media={media} />
         </SwiperSlide>
       ))}
-    </Swiper>
+    </ReactSwiper>
   );
 }
 
-export default Carousel;
+export default Swiper;

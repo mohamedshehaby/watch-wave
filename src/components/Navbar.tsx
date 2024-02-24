@@ -1,14 +1,8 @@
 "use client";
 import React from "react";
-import { ChevronDown } from "@nextui-org/shared-icons";
 
 import {
   Badge,
-  Button,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
   Link,
   Navbar as NextUiNavBar,
   NavbarBrand,
@@ -18,18 +12,10 @@ import {
   NavbarMenuToggle,
 } from "@nextui-org/react";
 import { paths } from "@/app/paths";
-import { usePathname } from "next/navigation";
 import NavbarAuthAvatar from "@/components/NavbarAuthAvatar";
-
-const icons = {
-  chevron: <ChevronDown fill="currentColor" size={16} />,
-};
+import NavbarDropdown from "@/components/NavbarDropdown";
 
 function Navbar() {
-  const pathName = usePathname();
-
-  const menuItems = ["now_playing", "popular", "top_rated", "upcoming"];
-
   return (
     <NextUiNavBar isBordered>
       <NavbarContent className="sm:hidden flex-grow-0 " justify="center">
@@ -43,52 +29,27 @@ function Navbar() {
           </Link>
         </NavbarBrand>
 
-        <Dropdown backdrop="blur">
-          <NavbarItem>
-            <DropdownTrigger>
-              <Button
-                disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
-                endContent={icons.chevron}
-                radius="sm"
-                variant="light"
-              >
-                Movies
-              </Button>
-            </DropdownTrigger>
-          </NavbarItem>
+        <NavbarDropdown
+          title="Movies"
+          menuItems={[
+            "trending",
+            "now_playing",
+            "popular",
+            "top_rated",
+            "upcoming",
+          ]}
+        />
+        <NavbarDropdown
+          title="Series"
+          menuItems={[
+            "trending",
+            "on_the_air",
+            "popular",
+            "top_rated",
+            "airing_today",
+          ]}
+        />
 
-          <DropdownMenu
-            aria-label="Movies"
-            itemClasses={{
-              base: "gap-4",
-            }}
-          >
-            {menuItems.map((item, index) => (
-              <DropdownItem key={`${item}-${index}`}>
-                <Link
-                  className="w-full"
-                  color={
-                    pathName === paths.movies(item) ? "warning" : "foreground"
-                  }
-                  href={paths.movies(item)}
-                  size="lg"
-                >
-                  {item.split("_").join(" ").charAt(0).toUpperCase()}
-                  {item.split("_").join(" ").slice(1)}
-                </Link>
-              </DropdownItem>
-            ))}
-          </DropdownMenu>
-        </Dropdown>
-
-        <NavbarItem>
-          <Badge content="soon" color="danger" size="sm">
-            <Link isDisabled color="foreground" href="#">
-              TV Shows
-            </Link>
-          </Badge>
-        </NavbarItem>
         <NavbarItem>
           <Badge content="soon" color="danger" size="sm">
             <Link isDisabled color="foreground" href="#">
@@ -123,52 +84,27 @@ function Navbar() {
           </Link>
         </NavbarBrand>
 
-        <Dropdown backdrop="blur">
-          <NavbarItem>
-            <DropdownTrigger>
-              <Button
-                disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
-                endContent={icons.chevron}
-                radius="sm"
-                variant="light"
-              >
-                Movies
-              </Button>
-            </DropdownTrigger>
-          </NavbarItem>
+        <NavbarDropdown
+          title="movies"
+          menuItems={[
+            "trending",
+            "now_playing",
+            "popular",
+            "top_rated",
+            "upcoming",
+          ]}
+        />
+        <NavbarDropdown
+          title="Series"
+          menuItems={[
+            "trending",
+            "on_the_air",
+            "popular",
+            "top_rated",
+            "airing_today",
+          ]}
+        />
 
-          <DropdownMenu
-            aria-label="Movies"
-            itemClasses={{
-              base: "gap-4",
-            }}
-          >
-            {menuItems.map((item, index) => (
-              <DropdownItem key={`${item}-${index}`}>
-                <Link
-                  className="w-full"
-                  color={
-                    pathName === paths.movies(item) ? "warning" : "foreground"
-                  }
-                  href={paths.movies(item)}
-                  size="lg"
-                >
-                  {item.split("_").join(" ").charAt(0).toUpperCase()}
-                  {item.split("_").join(" ").slice(1)}
-                </Link>
-              </DropdownItem>
-            ))}
-          </DropdownMenu>
-        </Dropdown>
-
-        <NavbarItem>
-          <Badge content="soon" color="danger" size="sm">
-            <Link isDisabled color="foreground" href="#">
-              TV Shows
-            </Link>
-          </Badge>
-        </NavbarItem>
         <NavbarItem>
           <Badge content="soon" color="danger" size="sm">
             <Link isDisabled color="foreground" href="#">

@@ -1,40 +1,49 @@
-import { getMovies, getTrendingMovies } from "@/lib/queries/apiMovies";
+import { getMovies } from "@/lib/queries/apiMovies";
 import Container from "@/components/Container";
 import { paths } from "@/app/paths";
 import ListSkeleton from "@/components/ListSkeleton";
 import { Suspense } from "react";
-import MovieList from "@/features/movies/MovieList";
-import Carousel from "@/components/Carousel";
+import MediaUiList from "@/features/movies/MediaUiList";
+import Slider from "@/components/Slider";
+import { moviesEndpoints, seriesEndpoints } from "@/lib/queries/apiEndPoints";
+import { getSeries } from "@/lib/queries/apiSeries";
 
 const MovieUIList = [
   {
-    title: "Now Playing",
-    fetchMovies: () => getMovies("now_playing"),
+    title: "Now Playing Movies",
+    fetchMedias: () => getMovies(moviesEndpoints.now_playing),
     href: paths.movies("now_playing"),
   },
-  {
-    title: "Popular Movies",
-    fetchMovies: () => getMovies("popular"),
-    href: paths.movies("popular"),
-  },
-  {
-    title: "Top Rated Movies",
-    fetchMovies: () => getMovies("top_rated"),
-    href: paths.movies("top_rated"),
-  },
+
   {
     title: "Upcoming Movies",
-    fetchMovies: () => getMovies("upcoming"),
+    fetchMedias: () => getMovies(moviesEndpoints.upcoming),
     href: paths.movies("upcoming"),
   },
 ];
 
-export default async function HomePage() {
-  const movies = await getTrendingMovies();
+const SeriesUiList = [
+  {
+    title: "On The Air Series",
+    fetchMedias: () => getSeries(seriesEndpoints.on_the_air),
+    href: paths.series("on_the_air"),
+  },
+  {
+    title: "Popular Series",
+    fetchMedias: () => getSeries(seriesEndpoints.popular),
+    href: paths.series("popular"),
+  },
+  {
+    title: "Airing Today Series",
+    fetchMedias: () => getSeries(seriesEndpoints.airing_today),
+    href: paths.series("airing_today_series"),
+  },
+];
 
+export default async function HomePage() {
   return (
     <>
-      <Carousel moviesList={movies} />
+      <Slider fetchMedias={() => getMovies(moviesEndpoints.trending)} />
 
       <Container className="flex flex-col gap-12">
         {MovieUIList.map((movieList, index) => (
@@ -42,7 +51,16 @@ export default async function HomePage() {
             key={`${movieList.title}-${index}`}
             fallback={<ListSkeleton />}
           >
-            <MovieList {...movieList} />
+            <MediaUiList {...movieList} />
+          </Suspense>
+        ))}
+
+        {SeriesUiList.map((seriesList, index) => (
+          <Suspense
+            key={`${seriesList.title}-${index}`}
+            fallback={<ListSkeleton />}
+          >
+            <MediaUiList {...seriesList} />
           </Suspense>
         ))}
       </Container>
