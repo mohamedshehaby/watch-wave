@@ -15,7 +15,7 @@ function Slide({ movie }: SlideProps) {
       </p>
       <Image
         fill
-        className="object-cover brightness-50 "
+        className="object-cover brightness-75 "
         src={`https://image.tmdb.org/t/p/original${movie.backdropPath}`}
         alt={movie.title}
       />

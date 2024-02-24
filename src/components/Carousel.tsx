@@ -22,8 +22,10 @@ interface CarouselProps {
 
 function Carousel({ moviesList }: CarouselProps) {
   const { movies, totalPages } = moviesList;
+
   return (
     <Swiper
+      wrapperClass={" mt-2  lg:mt-8 "}
       effect={"coverflow"}
       grabCursor={true}
       centeredSlides={true}
