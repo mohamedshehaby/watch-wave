@@ -14,8 +14,11 @@ import {
 import { paths } from "@/app/paths";
 import NavbarAuthAvatar from "@/components/NavbarAuthAvatar";
 import NavbarDropdown from "@/components/NavbarDropdown";
+import { useRouter } from "next/navigation";
 
 function Navbar() {
+  const router = useRouter();
+
   return (
     <NextUiNavBar isBordered>
       <NavbarContent className="sm:hidden flex-grow-0 " justify="center">
@@ -24,8 +27,8 @@ function Navbar() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarBrand className="flex-grow-0 flex-shrink-1">
-          <Link color="foreground" href={paths.home()}>
-            <p className="font-bold text-inherit">Watch Wave</p>
+          <Link href={paths.home()} color="foreground">
+            <p className="font-bold cursor-pointer text-inherit">Watch Wave</p>
           </Link>
         </NavbarBrand>
 
@@ -79,8 +82,8 @@ function Navbar() {
 
       <NavbarMenu>
         <NavbarBrand className="flex-grow-0 flex-shrink-1">
-          <Link color="foreground" href={paths.home()}>
-            <p className="font-bold text-inherit">Watch Wave</p>
+          <Link href={paths.home()} color="foreground">
+            <p className="font-bold cursor-pointer text-inherit">Watch Wave</p>
           </Link>
         </NavbarBrand>
 
