@@ -85,7 +85,7 @@ function Navbar() {
         </NavbarBrand>
 
         <NavbarDropdown
-          title="movies"
+          title="Movies"
           menuItems={[
             "trending",
             "now_playing",

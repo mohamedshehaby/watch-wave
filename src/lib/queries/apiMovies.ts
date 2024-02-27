@@ -1,5 +1,5 @@
 import fetcher from "@/lib/queries/fetchClient";
-import { Genre, MediaList } from "@/lib/types";
+import { Genre, MediaList, MovieDetails, Video } from "@/lib/types";
 import { moviesEndpoints } from "@/lib/queries/apiEndPoints";
 
 export async function getMoviesGenreList(): Promise<Genre[]> {
@@ -52,5 +52,56 @@ export async function getMovies(
     };
   } catch (error) {
     throw new Error(`Error fetching  movies`);
+  }
+}
+
+export async function getMovieDetails(
+  id: string,
+  url = moviesEndpoints.details,
+): Promise<MovieDetails> {
+  try {
+    const movieDetails = await fetcher(`${url}/${id}`, [
+      { key: "api_key", value: process.env.TMDB_API_KEY! },
+    ]);
+
+    return {
+      id: movieDetails.id,
+      title: movieDetails.title,
+      releaseDate: movieDetails.release_date,
+      rating: movieDetails.vote_average,
+      posterPath: movieDetails.poster_path,
+      backdropPath: movieDetails.backdrop_path,
+      overview: movieDetails.overview,
+      genres: movieDetails.genres.map((genre: any) => genre.name),
+      originalTitle: movieDetails.original_title,
+      homepage: movieDetails.homepage,
+      productionCompanies: movieDetails.production_companies.map(
+        (company: any) => {
+          return {
+            id: company.id,
+            name: company.name,
+            originCountry: company.origin_country,
+            logoPath: company.logo_path,
+          };
+        },
+      ),
+    };
+  } catch (error) {
+    throw new Error(`Error fetching movie details for ${id}`);
+  }
+}
+
+export async function getMovieVideos(
+  id: string,
+  url: string,
+): Promise<Video[]> {
+  try {
+    const data = await fetcher(`${url}/${id}/videos`, [
+      { key: "api_key", value: process.env.TMDB_API_KEY! },
+    ]);
+
+    return data.results;
+  } catch (error) {
+    throw new Error(`Error fetching movie videos for ${id}`);
   }
 }

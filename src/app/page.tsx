@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import { paths } from "@/app/paths";
 import ListSkeleton from "@/components/ListSkeleton";
 import { Suspense } from "react";
-import MediaUiList from "@/features/movies/MediaUiList";
+import MediaUiList from "@/features/media/MediaUiList";
 import Slider from "@/components/Slider";
 import { moviesEndpoints, seriesEndpoints } from "@/lib/queries/apiEndPoints";
 import { getSeries } from "@/lib/queries/apiSeries";

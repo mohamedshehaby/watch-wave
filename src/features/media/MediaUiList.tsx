@@ -1,6 +1,6 @@
 import React from "react";
 import { MediaList } from "@/lib/types";
-import MediaCard from "@/features/movies/MediaCard";
+import MediaCard from "@/features/media/MediaCard";
 import Link from "@/components/Link";
 import Pagination from "@/components/Pagination";
 

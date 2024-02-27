@@ -7,6 +7,8 @@ export const moviesEndpoints = {
   upcoming: `${baseUrl}/movie/upcoming`,
   now_playing: `${baseUrl}/movie/now_playing`,
   genres: `${baseUrl}/genre/movie/list`,
+  details: `${baseUrl}/movie`,
+  videos: `${baseUrl}/movie`,
 };
 
 export const seriesEndpoints = {

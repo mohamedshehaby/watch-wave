@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 import { Autoplay, EffectCoverflow } from "swiper/modules";
 import { Media } from "@/lib/types";
-import Slide from "@/components/Slide";
+import Billboard from "@/components/Billboard";
 
 function Swiper({ medias }: { medias: Media[] }) {
   return (
@@ -37,7 +37,7 @@ function Swiper({ medias }: { medias: Media[] }) {
     >
       {medias.map((media, index) => (
         <SwiperSlide key={`${media.title}-${index}`}>
-          <Slide media={media} />
+          <Billboard media={media} />
         </SwiperSlide>
       ))}
     </ReactSwiper>

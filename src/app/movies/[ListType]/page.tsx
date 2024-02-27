@@ -1,7 +1,7 @@
 import { getMovies } from "@/lib/queries/apiMovies";
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
-import MediasUiList from "@/features/movies/MediaUiList";
+import MediasUiList from "@/features/media/MediaUiList";
 import { Suspense } from "react";
 import ListSkeleton from "@/components/ListSkeleton";
 import { moviesEndpoints } from "@/lib/queries/apiEndPoints";
