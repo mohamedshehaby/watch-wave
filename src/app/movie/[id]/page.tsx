@@ -10,7 +10,7 @@ async function MovieDetailsPage({ params }: { params: { id: string } }) {
   const movie = await getMovieDetails(id);
 
   return (
-    <div className="flex flex-col gap-8 bg-black">
+    <div className="flex flex-col gap-8 ">
       <Billboard media={movie} className="h-[80dvh] " />
 
       <Container>

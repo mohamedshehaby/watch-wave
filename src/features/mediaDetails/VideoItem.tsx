@@ -16,7 +16,7 @@ function VideoItem({ video }: { video: { key: string; name: string } }) {
   return (
     <div
       onClick={onOpen}
-      className="relative brightness-75 group hover:brightness-100 cursor-pointer transition w-96 aspect-video flex-shrink-0 bg-black/50 rounded-md overflow-hidden"
+      className="relative brightness-75 group hover:brightness-100 cursor-pointer transition w-full  aspect-video flex-shrink-0 bg-black/50 rounded-md overflow-hidden"
     >
       <div className="w-full h-full">
         <Image
@@ -32,13 +32,14 @@ function VideoItem({ video }: { video: { key: string; name: string } }) {
       </div>
 
       <Modal
+        placement="center"
         backdrop={"blur"}
         isDismissable
         isKeyboardDismissDisabled={false}
         isOpen={isOpen}
         classNames={{
-          body: " py-6",
-          base: "w-full h-full max-w-[70dvw] max-h-[70dvh]",
+          body: " py-2 lg:py-6",
+          base: "w-full h-full max-w-[80dvw] max-h-[80dvh]",
         }}
         onOpenChange={onOpenChange}
       >

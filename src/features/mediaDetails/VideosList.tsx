@@ -18,7 +18,7 @@ async function VideosList({ id, type }: { id: string; type: string }) {
       {videos.length === 0 ? (
         <p> No videos available </p>
       ) : (
-        <div className=" overflow-scroll flex flex-row gap-4  w-full ">
+        <div className=" grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-x-4 gap-y-4 gap-4  w-full ">
           {videos.map(
             (video, index) =>
               video.site === "YouTube" &&
