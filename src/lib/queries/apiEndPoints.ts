@@ -9,6 +9,7 @@ export const moviesEndpoints = {
   genres: `${baseUrl}/genre/movie/list`,
   details: `${baseUrl}/movie`,
   videos: `${baseUrl}/movie`,
+  similar: `${baseUrl}/movie`,
 };
 
 export const seriesEndpoints = {
@@ -18,4 +19,7 @@ export const seriesEndpoints = {
   airing_today: `${baseUrl}/tv/airing_today`,
   trending: `${baseUrl}/trending/tv/day`,
   genres: `${baseUrl}/genre/tv/list`,
+  details: `${baseUrl}/tv`,
+  videos: `${baseUrl}/tv`,
+  similar: `${baseUrl}/tv`,
 };

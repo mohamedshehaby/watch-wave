@@ -93,7 +93,7 @@ export async function getMovieDetails(
 
 export async function getMovieVideos(
   id: string,
-  url: string,
+  url = moviesEndpoints.videos,
 ): Promise<Video[]> {
   try {
     const data = await fetcher(`${url}/${id}/videos`, [
@@ -103,5 +103,47 @@ export async function getMovieVideos(
     return data.results;
   } catch (error) {
     throw new Error(`Error fetching movie videos for ${id}`);
+  }
+}
+
+export async function getSimilarMovies(
+  id: string,
+
+  url = moviesEndpoints.similar,
+  page = 1,
+) {
+  try {
+    const movieGenres = await getMoviesGenreList();
+
+    const data = await fetcher(
+      `${url}/${id}/similar?language=en-US&page=${page}`,
+      [{ key: "api_key", value: process.env.TMDB_API_KEY! }],
+    );
+
+    const results = data.results;
+    const totalPages = data.total_pages;
+
+    return {
+      medias: results.map((movie: any) => {
+        const genreNames = movie.genre_ids.map((id: number) => {
+          const genre = movieGenres.find((genre) => genre.id === id);
+          return genre?.name;
+        });
+
+        return {
+          id: movie.id,
+          title: movie.title,
+          releaseDate: movie.release_date,
+          rating: movie.vote_average,
+          posterPath: movie.poster_path,
+          backdropPath: movie.backdrop_path,
+          overview: movie.overview,
+          genres: genreNames.slice(0, 3),
+        };
+      }),
+      totalPages: totalPages,
+    };
+  } catch (error) {
+    throw new Error(`Error fetching  movies`);
   }
 }

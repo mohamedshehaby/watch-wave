@@ -43,7 +43,7 @@ function Navbar() {
           ]}
         />
         <NavbarDropdown
-          title="Series"
+          title="Tv Shows"
           menuItems={[
             "trending",
             "on_the_air",
@@ -98,7 +98,7 @@ function Navbar() {
           ]}
         />
         <NavbarDropdown
-          title="Series"
+          title="Tv Shows"
           menuItems={[
             "trending",
             "on_the_air",

@@ -33,7 +33,12 @@ async function SeriesPage({
   return (
     <Container className="flex flex-col gap-12">
       <Suspense fallback={<ListSkeleton itemsNumber={20} />}>
-        <MediasUiList {...seriesList} showPagination={true} showTitle={false} />
+        <MediasUiList
+          mediaType="series"
+          {...seriesList}
+          showPagination={true}
+          showTitle={false}
+        />
       </Suspense>
     </Container>
   );

@@ -26,17 +26,17 @@ const SeriesUiList = [
   {
     title: "On The Air Series",
     fetchMedias: () => getSeries(seriesEndpoints.on_the_air),
-    href: paths.series("on_the_air"),
+    href: paths.tvShows("on_the_air"),
   },
   {
     title: "Popular Series",
     fetchMedias: () => getSeries(seriesEndpoints.popular),
-    href: paths.series("popular"),
+    href: paths.tvShows("popular"),
   },
   {
     title: "Airing Today Series",
     fetchMedias: () => getSeries(seriesEndpoints.airing_today),
-    href: paths.series("airing_today_series"),
+    href: paths.tvShows("airing_today_series"),
   },
 ];
 
@@ -51,7 +51,7 @@ export default async function HomePage() {
             key={`${movieList.title}-${index}`}
             fallback={<ListSkeleton />}
           >
-            <MediaUiList {...movieList} />
+            <MediaUiList mediaType="movie" {...movieList} />
           </Suspense>
         ))}
 
@@ -60,7 +60,7 @@ export default async function HomePage() {
             key={`${seriesList.title}-${index}`}
             fallback={<ListSkeleton />}
           >
-            <MediaUiList {...seriesList} />
+            <MediaUiList mediaType="series" {...seriesList} />
           </Suspense>
         ))}
       </Container>

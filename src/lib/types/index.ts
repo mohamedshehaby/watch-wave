@@ -33,7 +33,21 @@ export interface ProductionCompany {
 }
 export interface MovieDetails extends MediaDetails {}
 
-export interface TvShowDetails extends MediaDetails {}
+export interface TvShowDetails extends MediaDetails {
+  seasons: Season[];
+  numberEpisodes: number;
+  numberOfSeasons: number;
+}
+
+export interface Season {
+  airDate?: string;
+  episodeCount: number;
+  id: number;
+  name: string;
+  overview: string;
+  posterPath?: string;
+  seasonNumber: number;
+}
 
 export interface MediaList {
   medias: Media[];

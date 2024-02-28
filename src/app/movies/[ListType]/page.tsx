@@ -34,7 +34,12 @@ async function MoviesPage({
   return (
     <Container className="flex flex-col gap-12">
       <Suspense fallback={<ListSkeleton itemsNumber={20} />}>
-        <MediasUiList {...movieList} showPagination={true} showTitle={false} />
+        <MediasUiList
+          mediaType="movie"
+          {...movieList}
+          showPagination={true}
+          showTitle={false}
+        />
       </Suspense>
     </Container>
   );

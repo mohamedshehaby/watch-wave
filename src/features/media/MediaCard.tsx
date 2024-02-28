@@ -5,14 +5,25 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
 import { Media } from "@/lib/types";
 import { useRouter } from "next/navigation";
+import { paths } from "@/app/paths";
 
-function MediaCard({ media }: { media: Media }) {
+function MediaCard({
+  media,
+  type,
+}: {
+  media: Media;
+  type: "movie" | "series";
+}) {
   const router = useRouter();
 
   return (
     <div
       onClick={() => {
-        router.push(`/movie/${media.id}`);
+        router.push(
+          type === "movie"
+            ? paths.movie(`${media.id}`)
+            : paths.tvShow(`${media.id}`),
+        );
       }}
     >
       <Card

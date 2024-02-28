@@ -49,7 +49,7 @@ function NavbarDropdown({
               className="w-full"
               color={"foreground"}
               href={
-                title === "Movies" ? paths.movies(item) : paths.series(item)
+                title === "Movies" ? paths.movies(item) : paths.tvShows(item)
               }
               size="lg"
             >

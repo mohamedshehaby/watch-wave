@@ -1,7 +1,9 @@
 import React from "react";
 import { getMovieVideos } from "@/lib/queries/apiMovies";
-import { moviesEndpoints } from "@/lib/queries/apiEndPoints";
 import VideoItem from "@/features/mediaDetails/VideoItem";
+import { getSeriesVideos } from "@/lib/queries/apiSeries";
+import { Video } from "@/lib/types";
+import Heading from "@/components/Heading";
 
 interface VideosProps {
   id: string;
@@ -9,14 +11,17 @@ interface VideosProps {
 }
 
 async function VideosList({ id, type }: { id: string; type: string }) {
-  const videos = await getMovieVideos(id, moviesEndpoints.videos);
+  let videos: Video[] = [];
+
+  if (type === "series") videos = await getSeriesVideos(id);
+  else videos = await getMovieVideos(id);
 
   return (
     <div className="text-white w-full flex flex-col gap-4">
-      <h2 className="text-md md:text-xl lg:text-2xl"> Videos & Trailers </h2>
+      <Heading as="h2">Trailers</Heading>
 
       {videos.length === 0 ? (
-        <p> No videos available </p>
+        <p> No trailers available </p>
       ) : (
         <div className=" grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-x-4 gap-y-4 gap-4  w-full ">
           {videos.map(
