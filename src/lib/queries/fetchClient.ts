@@ -12,6 +12,9 @@ const fetcher = async (url: string, queryParams: QueryParams[]) => {
     headers: {
       "Content-Type": "application/json",
     },
+    next: {
+      revalidate: 24 * 60 * 60,
+    },
   });
 
   if (!response.ok) {

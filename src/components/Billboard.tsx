@@ -4,6 +4,7 @@ import { Media, MediaDetails } from "@/lib/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { cn } from "@nextui-org/react";
+import { paths } from "@/app/paths";
 
 interface BillboardProps {
   media: Media | MediaDetails;
@@ -13,8 +14,6 @@ interface BillboardProps {
 function Billboard({ media, className }: BillboardProps) {
   const router = useRouter();
 
-  console.log(media, "media");
-
   return (
     <div
       className={cn(
@@ -22,7 +21,7 @@ function Billboard({ media, className }: BillboardProps) {
         "relative h-[80dvh]  flex flex-col justify-between",
       )}
       onClick={() => {
-        router.push(`/movie/${media.id}`);
+        router.push(paths.movieDetails(`${media.id}`));
       }}
     >
       <p className=" z-10 pl-4 md:pl-16  mt-4 mt:pl-16  text-white text-1xl md:text-5xl h-full w-[50%] lg:text-6xl font-bold drop-shadow-xl">

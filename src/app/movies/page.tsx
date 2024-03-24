@@ -1,32 +1,30 @@
+import { getMovies } from "@/lib/queries/apiMovies";
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import MediasUiList from "@/features/media/MediaUiList";
 import { Suspense } from "react";
 import ListSkeleton from "@/components/ListSkeleton";
-import { seriesEndpoints } from "@/lib/queries/apiEndPoints";
-import { getSeries } from "@/lib/queries/apiSeries";
+import { moviesEndpoints } from "@/lib/queries/apiEndPoints";
 
-async function SeriesPage({
-  params,
+async function MoviesPage({
   searchParams,
 }: {
-  params: { ListType: string };
-  searchParams: { page: string };
+  searchParams: { page: string; list: string };
 }) {
-  const listType = params.ListType;
   const page = searchParams.page ? parseInt(searchParams.page) : 1;
+  const list = searchParams.list;
 
   // @ts-ignore
-  if (!seriesEndpoints[listType]) {
+  if (!moviesEndpoints[list]) {
     notFound();
   }
 
-  const seriesList = {
+  const movieList = {
     title:
-      listType.split("_").join(" ").charAt(0).toUpperCase() +
-      listType.split("_").join(" ").slice(1),
+      list.split("_").join(" ").charAt(0).toUpperCase() +
+      list.split("_").join(" ").slice(1),
     // @ts-ignore
-    fetchMedias: () => getSeries(seriesEndpoints[listType], page),
+    fetchMedias: () => getMovies(moviesEndpoints[list], page),
     displayCount: 21,
   };
 
@@ -34,8 +32,8 @@ async function SeriesPage({
     <Container className="flex flex-col gap-12">
       <Suspense fallback={<ListSkeleton itemsNumber={20} />}>
         <MediasUiList
-          mediaType="series"
-          {...seriesList}
+          mediaType="movie"
+          {...movieList}
           showPagination={true}
           showTitle={false}
         />
@@ -44,4 +42,4 @@ async function SeriesPage({
   );
 }
 
-export default SeriesPage;
+export default MoviesPage;

@@ -21,8 +21,8 @@ function MediaCard({
       onClick={() => {
         router.push(
           type === "movie"
-            ? paths.movie(`${media.id}`)
-            : paths.tvShow(`${media.id}`),
+            ? paths.movieDetails(`${media.id}`)
+            : paths.seriesDetails(`${media.id}`),
         );
       }}
     >

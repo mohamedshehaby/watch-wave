@@ -3,6 +3,7 @@ import { Genre, MediaList, MovieDetails, Video } from "@/lib/types";
 import { moviesEndpoints } from "@/lib/queries/apiEndPoints";
 
 export async function getMoviesGenreList(): Promise<Genre[]> {
+
   try {
     const data = await fetcher(moviesEndpoints.genres, [
       {
@@ -14,12 +15,15 @@ export async function getMoviesGenreList(): Promise<Genre[]> {
   } catch (error) {
     throw new Error("Error fetching Genres List for Movies");
   }
+
+
 }
 
 export async function getMovies(
   url: string,
   page: number = 1,
 ): Promise<MediaList> {
+
   try {
     const movieGenres = await getMoviesGenreList();
 
