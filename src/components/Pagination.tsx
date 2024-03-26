@@ -6,6 +6,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 function Pagination({ total }: { total: number }) {
   const searchParams = useSearchParams();
+  const query = searchParams
+    .toString()
+    .replace(`&page=${searchParams.get("page")}`, "");
+
   const [currentPage, setCurrentPage] = useState(
     searchParams.get("page") ? parseInt(searchParams.get("page")!) : 1,
   );
@@ -22,7 +26,7 @@ function Pagination({ total }: { total: number }) {
         showShadow={true}
         onChange={(page) => {
           setCurrentPage(page);
-          router.push(`?page=${page}`, {
+          router.push(`?${query}&page=${page}`, {
             scroll: true,
           });
         }}

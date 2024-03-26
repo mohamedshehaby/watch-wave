@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf8ab7b-658c-4cfe-ae97-45a9ef9ea237" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/movie/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/movies/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/movies/[ListType]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/movies/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/paths.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/paths.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/tv-show/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/tv-shows/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/tv-shows/[ListType]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/tv-shows/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Billboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Billboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/media/MediaCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/media/MediaCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/queries/apiMovies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/queries/apiMovies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/queries/fetchClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/queries/fetchClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +75,7 @@
       <recent name="I:\Web\next_js\watch-wave\public\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\Web\next_js\watch-wave\src\app\series" />
       <recent name="I:\Web\next_js\watch-wave\src\app\tv-shows" />
       <recent name="I:\Web\next_js\watch-wave\src\app\movies" />
       <recent name="I:\Web\next_js\watch-wave\src\app\movies\[ListType]" />
@@ -168,7 +160,8 @@
       <workItem from="1709737537095" duration="115000" />
       <workItem from="1711197326923" duration="132000" />
       <workItem from="1711243774528" duration="133000" />
-      <workItem from="1711295337395" duration="1129000" />
+      <workItem from="1711295337395" duration="1991000" />
+      <workItem from="1711416249056" duration="1604000" />
     </task>
     <servers />
   </component>
