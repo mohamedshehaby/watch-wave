@@ -8,6 +8,8 @@ import Slider from "@/components/Slider";
 import { moviesEndpoints, seriesEndpoints } from "@/lib/queries/apiEndPoints";
 import { getSeries } from "@/lib/queries/apiSeries";
 
+export const dynamic = "force-dynamic";
+
 const MovieUIList = [
   {
     title: "Now Playing Movies",
