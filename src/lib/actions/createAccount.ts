@@ -41,7 +41,7 @@ export async function createAccount(
     };
   }
 
-  const existingUser: User = await db.user.findUnique({
+  const existingUser = await db.user.findUnique({
     where: {
       email: result.data.email,
     },

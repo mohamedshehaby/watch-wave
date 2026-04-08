@@ -6,8 +6,8 @@ import Container from "@/components/Container";
 import ListSkeleton from "@/components/ListSkeleton";
 import MediaUiList from "@/features/media/MediaUiList";
 
-async function MovieDetailsPage({ params }: { params: { id: string } }) {
-  const id = params.id;
+async function MovieDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const movie = await getMovieDetails(id);
 
   return (
