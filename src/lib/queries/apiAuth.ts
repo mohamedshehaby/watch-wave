@@ -15,7 +15,7 @@ export const getCurrentUser = cache(async (): Promise<User | null> => {
     return null;
   }
 
-  const currentUser: User = await db.user.findUnique({
+  const currentUser = await db.user.findUnique({
     where: {
       email: session.user.email || "",
     },

@@ -9,10 +9,10 @@ import { moviesEndpoints } from "@/lib/queries/apiEndPoints";
 async function MoviesPage({
   searchParams,
 }: {
-  searchParams: { page: string; list: string };
+  searchParams: Promise<{ page: string; list: string }>;
 }) {
-  const page = searchParams.page ? parseInt(searchParams.page) : 1;
-  const list = searchParams.list;
+  const { page: pageParam, list } = await searchParams;
+  const page = pageParam ? parseInt(pageParam) : 1;
 
   // @ts-ignore
   if (!moviesEndpoints[list]) {

@@ -7,14 +7,12 @@ import { seriesEndpoints } from "@/lib/queries/apiEndPoints";
 import { getSeries } from "@/lib/queries/apiSeries";
 
 async function SeriesPage({
-  params,
   searchParams,
 }: {
-  params: { ListType: string };
-  searchParams: { page: string; list: string };
+  searchParams: Promise<{ page: string; list: string }>;
 }) {
-  const list = searchParams.list;
-  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+  const { list, page: pageParam } = await searchParams;
+  const page = pageParam ? parseInt(pageParam) : 1;
 
   // @ts-ignore
   if (!seriesEndpoints[list]) {

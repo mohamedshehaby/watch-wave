@@ -6,8 +6,8 @@ import VideosList from "@/features/mediaDetails/VideosList";
 import { getSeriesDetails, getSimilarSeries } from "@/lib/queries/apiSeries";
 import MediaUiList from "@/features/media/MediaUiList";
 
-async function SeriesDetailsPage({ params }: { params: { id: string } }) {
-  const id = params.id;
+async function SeriesDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const seriesDetails = await getSeriesDetails(id);
 
   return (
